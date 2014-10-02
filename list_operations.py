@@ -18,50 +18,57 @@ operations. The docstring of each function describes what it should do. Consult
 test_list_operations.py for concrete examples of the expected function behavior.
 """
 
+#months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug','Sep', 'Oct', 'Nov', 'Dec']
+#notes = ['Do', 'Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do']
+#multiples = [0, 3, 6, 9, 12, 15, 18, 21, 24, 27]
+
+
 def head(input_list):
     """Return the first element of the input list."""
-    pass
+    return input_list[0]
+
 
 def tail(input_list):
     """Return all elements of the input list except the first."""
-    pass
+    return input_list[1:]
 
 def last(input_list):
     """Return the last element of the input list."""
-    pass
+    return input_list[-1]
 
 def init(input_list):
     """Return all elements of the input list except the last."""
-    pass
+    return input_list[:-1]
 
 def first_three(input_list):
     """Return the first three elements of the input list."""
-    pass
+    return input_list[0:3]
 
 def last_five(input_list):
     """Return the last five elements of the input list."""
-    pass
+    return input_list[-5:]
 
 def middle(input_list):
     """Return all elements of the input list except the first two and the last
     two.
     """
-    pass
+    return input_list[2:-2]
 
 def inner_four(input_list):
     """Return the third, fourth, fifth, and sixth elements of the input list."""
-    pass
+    return input_list[2:6]
 
 def inner_four_end(input_list):
     """Return the sixth, fifth, fourth, and third elements from the end of the
     list, in that order.
     """
-    pass
+    return input_list[-6:-2:1]
 
 def replace_head(input_list):
     """Replace the head of the input list with the value 42."""
-    pass
-
+    input_list.pop(0)
+    return input_list(0,42)
+    
 def replace_third_and_last(input_list):
     """Replace the third and last elements of the input list with the value 37."""
     pass
