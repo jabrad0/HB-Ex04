@@ -68,10 +68,13 @@ def replace_head(input_list):
     """Replace the head of the input list with the value 42."""
     input_list.pop(0)
     return input_list(0,42)
-    
+
 def replace_third_and_last(input_list):
     """Replace the third and last elements of the input list with the value 37."""
-    pass
+    input_list.pop(2)
+    input_list(2,37)
+    input_list.pop(-1)
+    return input_list.append(37)
 
 def replace_middle(input_list):
     """Replace all elements of the input list with the the values 42 and 37, in
