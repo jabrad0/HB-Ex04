@@ -123,34 +123,71 @@ the test_list_operations.py file for concrete examples of expected behavior.
 
 def custom_len(input_list):
     """custom_len(input_list) imitates len(input_list)"""
-    pass
+    length = 0    
+    for i in input_list:
+        length += 1
+    return length
 
 # For the next four functions, get clever using slice operations described in the first half
 def custom_append(input_list, value):
     """custom_append(input_list, value) imitates input_list.append(value)"""
-    pass
+    #below does not work******************
+    #new_list = input_list + []
+    #new_list[-1] = value
+    #return new_list
+    #below does  work, but is "out of place" so didn't passed the test, ok...but less efficient need to understand how to do both******************
+    #nlist = [1]
+    #new_list = input_list + nlist
+    #new_list[-1] = value
+    #return new_list
+   #below does not work******************
+   #input_list = input_list + input_list[-1]
+
+    #Both below work, and both are "in place":
+    x = len(input_list)
+    input_list[x:] = [value]
+    # Can't do this:
+    #input_list[-1:] = [value]
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    pass
+    x = len(input_list)
+    input_list[x:] = values
 
 def custom_insert(input_list, index, value):
     """custom_insert(input_list, index, value) imitates
     input_list.insert(index, value)
     """
-    pass
+    input_list[index:index] = [value]
 
 def custom_remove(input_list, value):
     """custom_remove(input_list, value) imitates input_list.remove(value)"""
-    pass
+    #for any item in the list:
+    x = 0
+    for i in input_list:
+        #if the item in input_list is equivalent to one of the values listed in test_list_operations:
+        if input_list[x] == value:
+            #delete item i
+            del input_list[x]
+        else:
+            x += 1    
+    return input_list
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
-    pass
+    last_value = input_list[-1]
+    del input_list[-1]
+    return last_value 
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    pass
+    x = 0
+    for i in input_list:
+        #if the item in input_list is equivalent to one of the values listed in test_list_operations:
+        if input_list[x] == value:
+            return x
+        else:
+            x += 1    
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
