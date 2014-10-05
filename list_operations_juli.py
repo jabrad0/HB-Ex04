@@ -24,7 +24,7 @@ test_list_operations.py for concrete examples of the expected function behavior.
 
 
 def head(input_list):
-    """Return the first element of the input list."""
+    """Return the first element of the input list ."""
     return input_list[0]
 
 
